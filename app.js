@@ -1,18 +1,8 @@
-//Union, literals, type aliases
-function combine(input1, input2, resultConversion) {
-    var result;
-    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === "as-number") {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+//Function return types and void
+function add(num1, num2) {
+    return num1 + num2;
 }
-;
-var combinedAges = combine(30, 26, 'as-number');
-console.log(combinedAges);
-var combinedStringAges = combine("30", "26", 'as-number');
-console.log(combinedStringAges);
-var combinedNames = combine("Anna", "Maria", "as-text");
-console.log(combinedNames);
+function printResult(num) {
+    console.log("Result: " + num);
+}
+printResult(add(5, 10));
