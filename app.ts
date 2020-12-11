@@ -1,41 +1,18 @@
-//Objects, arrays, tuples
+//Union
 
-const person: {
-  name: string,
-  age: number,
-  hobbies: string[],
-  role: [number, string]
-} = {
-  name: "Sofia",
-  age: 26,
-  hobbies: ['sports', 'cinema', 'travel'],
-  role: [2, 'author']
+function combine(input1: number | string, input2: number | string) {
+  let result;
+  if(typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString()
+  }
+
+  return result;
 };
 
-// person.role.push('admin'); push is an exeption, typescript can't catch error
-// person.role[1] = 10; gives an error as tuple only accepts 2 elements of type number and string
-person.role = [3, 'admin'];
+const combinedAges = combine(30, 26);
+console.log(combinedAges);
 
-let favouriteHobbies: string[];
-favouriteHobbies = ['sports'];
-
-//console.log(person);
-
-for(const hobby of person.hobbies) {
-  //console.log(hobby.toUpperCase());
-};
-
-//Enums
-
-enum Role { ADMIN, READ_ONLY, AUTHOR }
-
-const person1 = {
-  name: "Sofia",
-  age: 26,
-  hobbies: ['sports', 'cinema', 'travel'],
-  role: Role.ADMIN,
-};
-
-if(person1.role === Role.AUTHOR) {
-  console.log('The role is author')
-}
+const combinedNames = combine("Anna", "Maria")
+console.log(combinedNames)
