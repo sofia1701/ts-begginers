@@ -1,11 +1,16 @@
-//Objects
+//Objects, arrays
 
-const person: {
-  name: string,
-  age: number,
-} = {
+const person = {
   name: "Sofia",
-  age: 26
-}
+  age: 26,
+  hobbies: ['sports', 'cinema', 'travel']
+};
 
-console.log(person.name)
+let favouriteHobbies: string[];
+favouriteHobbies = ['sports'];
+
+console.log(person.name);
+
+for(const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+};
