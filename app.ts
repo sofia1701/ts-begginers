@@ -9,3 +9,11 @@ function printResult(num: number) {
 }
 
 printResult(add(5,10))
+
+//Function types
+
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+
+console.log(combineValues(8,8))
