@@ -1,30 +1,20 @@
-//Function return types and void
+//Unknown, Never types
 
-function add(num1: number, num2: number) {
-  return num1 + num2
+//Unknown
+let userInput: unknown;
+let userName: string;
+
+userInput = "sofi";
+userInput = 5;
+
+if(typeof userInput === 'string') {
+  userName = userInput
 }
 
-function printResult(num: number) {
-  console.log("Result: " + num)
+//Never - Never produces a value
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code }
 }
 
-printResult(add(5,10))
-
-//Callbacks
-
-function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
-  const result = n1 + n2
-  cb(result)
-}
-
-addAndHandle(10, 10, (result) => {
-  console.log(result)
-})
-
-//Function types
-
-let combineValues: (a: number, b: number) => number;
-
-combineValues = add;
-
-console.log(combineValues(8,8))
+const result = generateError('An error occured', 500)
+console.log(result)
